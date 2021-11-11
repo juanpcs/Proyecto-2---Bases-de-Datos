@@ -1,0 +1,28 @@
+#productsDisplay{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 700px;
+    width: 1000px;
+    margin-right: 475px;
+    float: right;
+}
+
+#report{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 700px;
+    width: 1000px;
+    margin-right: 475px;
+    float: right;
+}
+
+#select{
+    padding: 1%;
+    height: 55px;
+    background-color: gray;
+    margin-bottom: 10px;
+}

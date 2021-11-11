@@ -1,0 +1,45 @@
+<section id = "select">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" (click) = "setAction(0)" checked>
+        <label class="form-check-label" for="inlineRadio1">Aprobar Productos</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" (click) = "setAction(1)">
+        <label class="form-check-label" for="inlineRadio2">Generar Reporte</label>
+      </div>
+</section>
+
+<section id = "productsDisplay" *ngIf = "displayProducts" >
+    <h2>Seleccione los Productos</h2>
+    <br>
+    <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" *ngFor="let product of products">
+            
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseone" aria-controls="collapseOne">
+              {{product}}
+              {{product}}
+            </button>
+          </h2>
+          <div id="collapseone" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Descripcion: {{product}}</p>
+              <div>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" [checked] = "product" value="" aria-label="...">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 82%;">
+        <button  type="button" class="btn btn-primary" >Aprobar</button>
+        <button  type="button" class="btn btn-primary" >Rechazar</button>
+    </div>
+</section>
+
+<section id = "report" *ngIf = "report" >
+    <h2>Generar Reporte</h2>
+    <br>
+    <button  type="button" class="btn btn-primary" style="margin-left:88%;">Generar</button>
+</section>

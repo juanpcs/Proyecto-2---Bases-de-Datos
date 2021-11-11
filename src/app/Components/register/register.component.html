@@ -1,0 +1,78 @@
+<section id = "register" *ngIf = "registerOn; else elseBlock">
+    <h4>Crear Cuenta</h4>
+    <br>
+    <div class="input-group">
+        <input type="text" aria-label="First name" class="form-control" placeholder="Nombre">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="1° Apellido">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="2° Apellido">
+    </div>
+    <br>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cédula">
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">Fecha de nacimiento</span>
+        <input type="date" aria-label="Last name" class="form-control">
+    </div>
+    <br>
+    <div class="mb-3" *ngIf = "user === 'Client';else adBlock">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="País de residencia">
+    </div>    
+    <ng-template #adBlock>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dirección">
+        </div> 
+    </ng-template>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Peso">
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Indice de Masa Corporal">
+        <span class="input-group-text">%</span>
+    </div>
+    <div class="mb-3" *ngIf="user === 'Nutritionist'">
+        <br>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número de Tarjeta">
+        <br>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tipo de pago">
+        <br>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Foto">
+    </div>
+    <br>
+    <div class="mb-3">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo electronico">
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+    </div>
+    <br>
+    <button class = "btn btn-primary" style="margin-left: 85%;" (click) = "getMeasures()" routerLink = {{route}} >Registrarse</button>
+    <br>
+</section>
+<ng-template #elseBlock>
+    <section id = "register">
+        <h4>Agregar medidas</h4>
+        <br>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Caderas">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cintura">
+        </div>    
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cuello">
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Músculo">
+            <span class="input-group-text">%</span>
+        </div>   
+        <br>     
+        <div class="input-group">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grasa">
+            <span class="input-group-text">%</span>
+        </div>
+        <br>
+        <button class = "btn btn-primary" style="margin-left: 60%;" routerLink = {{route}} >Registrarse</button>
+        <br>
+    </section>
+</ng-template>

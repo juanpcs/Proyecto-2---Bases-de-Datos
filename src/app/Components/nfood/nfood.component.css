@@ -1,0 +1,75 @@
+#productsDisplay{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 700px;
+    width: 1000px;
+    margin-right: 50px;
+    float: right;
+}
+
+#plan{
+    padding: 3%;
+    border-radius: 1%;
+    background-color: gray;
+    height: fit-content;
+    width: 400px;
+}
+
+#planAux{
+    padding: 3%;
+    border-radius: 1%;
+    background-color: gray;
+    width: 400px;
+    height: 309px;
+    overflow-y: auto;
+}
+
+
+#select{
+    padding: 1%;
+    height: 55px;
+    background-color: gray;
+    margin-bottom: 10px;
+}
+
+
+#addclient{
+    padding: 3%;
+    border-radius: 1%;
+    background-color: gray;
+    height: fit-content;
+    width: 400px;
+}
+
+#clientsInfo{    
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 700px;
+    width: 1000px;
+    float: right;
+    margin-right: 50px;
+}
+
+#feedback{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    height: 700px;
+    width: 400px;
+    float: right;
+    margin-right: 20px;
+}
+
+#addProduct{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    height: 700px;
+    width: 400px;
+    float: right;
+    margin-right: 20px;
+}

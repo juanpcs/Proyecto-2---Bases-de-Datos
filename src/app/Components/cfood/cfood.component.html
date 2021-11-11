@@ -1,0 +1,202 @@
+<section id = "select">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" (click) = "setAction(0)" checked>
+        <label class="form-check-label" for="inlineRadio1">Agregar Receta</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" (click) = "setAction(1)">
+        <label class="form-check-label" for="inlineRadio2">Registro de Consumo</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option3" (click) = "setAction(2)">
+        <label class="form-check-label" for="inlineRadio1">Registrar Medidas</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4" (click) = "setAction(3)">
+        <label class="form-check-label" for="inlineRadio2">Reporte de Avance</label>
+      </div>
+</section>
+
+
+<section id = "recipe" style="float: left;" *ngIf = "recipe">  
+    <h2>Agregar Receta</h2>
+    <br>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      </div>
+    <div class="input-group">
+        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"></textarea>
+    </div>
+    <br>
+    <br>
+    <button style="margin-left: 76%;" type="button" class="btn btn-primary" (click) = "addProduct()">Agregar</button>
+</section>
+
+
+<section id = "register" style="float: left;" *ngIf = "register">  
+  <h2>Registrar Cosumo</h2>
+  <br>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Fecha</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <h6>Seleccione un tiempo</h6>
+  <ul>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Desayuno
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Merienda Mañana
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Almuerzo
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+       Merienda Tarde
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Cena
+      </label>
+    </div>
+  </ul>
+  <br>
+  <br>
+  <button style="margin-left: 76%;" type="button" class="btn btn-primary" (click) = "addProduct()">Registrar</button>
+</section>
+
+<section id = "addProduct" *ngIf = "displayProducts">
+  <h2>Agregar Producto</h2>
+  <br>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+  </div>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Código de Barras">
+  </div>    
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Descripción">
+  </div>
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Porción">
+      <span class="input-group-text">g-ml</span>
+  </div>    
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Energía">
+      <span class="input-group-text">kcal</span>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grasa">
+    <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Sodio">
+  <span class="input-group-text">mg</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carbohidratos">
+  <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Proteína">
+  <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Calcio">
+  <span class="input-group-text">mg</span>
+  <div class="input-group">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Hierro">
+    <span class="input-group-text">mg</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vitaminas">
+</div>
+</div>
+  <br>
+  <button class = "btn btn-primary" style="margin-left: 78%;" >Agregar</button>
+  <br>
+</section>
+
+<section id = "productsDisplay" *ngIf = "displayProducts" >
+    <h2>Seleccione los Productos</h2>
+    <br>
+    <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" *ngFor="let product of products">
+            
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseone" aria-controls="collapseOne">
+              {{product}}
+              {{product}}
+            </button>
+          </h2>
+          <div id="collapseone" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Descripcion: {{product}}</p>
+              <div>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" [checked] = "product" value="" aria-label="...">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="measures" *ngIf = "measures">
+  <h4>Agregar medidas</h4>
+  <br>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Fecha</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Caderas">
+  </div>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cintura">
+  </div>    
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cuello">
+  </div>
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Músculo">
+      <span class="input-group-text">%</span>
+  </div>   
+  <br>     
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grasa">
+      <span class="input-group-text">%</span>
+  </div>
+  <br>
+  <button class = "btn btn-primary" style="margin-left: 85%;" >Agregar</button>
+  <br>
+</section>
+
+<section id="report" *ngIf = "report">
+  <h4>Generar Reporte</h4>
+  <br>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Desde</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Hasta</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <br>
+  <button class = "btn btn-primary" style="margin-left: 85%;" >Generar</button>
+  <br>
+</section>
