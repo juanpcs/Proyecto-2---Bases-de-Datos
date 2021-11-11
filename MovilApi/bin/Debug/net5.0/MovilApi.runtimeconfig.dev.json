@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\chago\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\chago\\.nuget\\packages"
+    ]
+  }
+}
