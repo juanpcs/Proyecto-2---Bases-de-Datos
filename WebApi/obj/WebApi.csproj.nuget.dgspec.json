@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Proyecto#2\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\Proyecto-2---Bases-de-Datos\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Proyecto#2\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\Proyecto-2---Bases-de-Datos\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Proyecto#2\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\Proyecto-2---Bases-de-Datos\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Proyecto#2\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\Proyecto-2---Bases-de-Datos\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\chago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Proyecto#2\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\Proyecto-2---Bases-de-Datos\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chago\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -45,6 +45,10 @@
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
