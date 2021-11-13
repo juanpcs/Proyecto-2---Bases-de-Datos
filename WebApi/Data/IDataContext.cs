@@ -10,7 +10,8 @@ namespace WebApi.Data
     public interface IDataContext
     {
         DbSet<Student> Students { get; init; }
-        DbSet<Cliente> Clientes { get; init; }
+        DbSet<Nutricionista> NUTRICIONISTA { get; init; }
+        DbSet<Cliente> CLIENTE { get; init; }
 
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

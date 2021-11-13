@@ -17,34 +17,34 @@ namespace WebApi.Repositories
         }
         public async Task Add(Cliente cliente)
         {        
-            _context.Clientes.Add(cliente);
+            _context.CLIENTE.Add(cliente);
             await _context.SaveChangesAsync();
         }
     
         public async Task Delete(string Correo_electronico)
         {
-            var itemToRemove = await _context.Clientes.FindAsync(Correo_electronico);
+            var itemToRemove = await _context.CLIENTE.FindAsync(Correo_electronico);
             if (itemToRemove == null)
                 throw new NullReferenceException();
             
             // Borra el objeto
-            _context.Clientes.Remove(itemToRemove);
+            _context.CLIENTE.Remove(itemToRemove);
             await _context.SaveChangesAsync();
         }
     
         public async Task<Cliente> Get(string Correo_electronico)
         {
-            return await _context.Clientes.FindAsync(Correo_electronico);
+            return await _context.CLIENTE.FindAsync(Correo_electronico);
         }
     
         public async Task<IEnumerable<Cliente>> GetAll()
         {
-            return await _context.Clientes.ToListAsync();
+            return await _context.CLIENTE.ToListAsync();
         }
     
         public async Task Update(Cliente cliente)
         {
-            var itemToUpdate = await _context.Clientes.FindAsync(cliente.Correo_electronico);
+            var itemToUpdate = await _context.CLIENTE.FindAsync(cliente.Correo_electronico);
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Nombre = cliente.Nombre;

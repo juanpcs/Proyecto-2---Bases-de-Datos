@@ -15,7 +15,7 @@ using Microsoft.Extensions.Configuration;
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("api/Clientes")]
+    [Route("api/Cliente")]
     public class ClienteController: ControllerBase
     {
     
@@ -27,7 +27,7 @@ namespace WebApi.Controllers
         }
     
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+        public async Task<ActionResult<IEnumerable<Cliente>>> GetCliente()
         {
             var clientes = await _clienteRepository.GetAll();
             return Ok(clientes);

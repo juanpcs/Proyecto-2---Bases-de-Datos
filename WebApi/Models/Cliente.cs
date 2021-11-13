@@ -16,7 +16,7 @@ namespace WebApi.Models
         public string Apellido2 { get; set; }
         public string Pais { get; set; }
         public DateTime Fecha_nacimiento { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
         public string Contraseña { get; set; }
         public decimal IMC { get; set; }
         public int Peso_actual { get; set; }

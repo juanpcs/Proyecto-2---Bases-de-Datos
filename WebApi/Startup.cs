@@ -29,6 +29,8 @@ namespace WebApi
 
             services.AddScoped<IDataContext>(provider => provider.GetService<DataContext>());
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<INutricionistaRepository, NutricionistaRepository>();
 
             services.AddControllers();
 
