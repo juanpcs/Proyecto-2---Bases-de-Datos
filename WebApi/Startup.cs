@@ -31,6 +31,7 @@ namespace WebApi
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<INutricionistaRepository, NutricionistaRepository>();
+            services.AddScoped<IPlanRepository, PlanRepository>();
 
             services.AddControllers();
 
