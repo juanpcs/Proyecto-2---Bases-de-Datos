@@ -28,10 +28,11 @@ namespace WebApi
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IDataContext>(provider => provider.GetService<DataContext>());
-            services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<INutricionistaRepository, NutricionistaRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
+            services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+            services.AddScoped<IProductoRepository, ProductoRepository>();
 
             services.AddControllers();
 

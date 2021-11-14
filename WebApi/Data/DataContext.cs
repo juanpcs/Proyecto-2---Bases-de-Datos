@@ -12,10 +12,11 @@ namespace WebApi.Data
              
         }
  
-        public DbSet<Student> Students { get; init; }
         public DbSet<Nutricionista> NUTRICIONISTA { get; init; }
         public DbSet<Cliente> CLIENTE { get; init; }
         public DbSet<Plan> PLAN_ { get; init; }
         public DbSet<Medidas> MEDIDAS { get; init; }
+        public DbSet<Administrador> ADMINISTRADOR { get; init; }
+        public DbSet<Producto> PRODUCTO { get; init; }
     }
 }
