@@ -7,10 +7,10 @@ namespace WebApi
 {
     public interface IMedidasRepository
     {
-        Task<Medidas> Get(string CCorreo_electronico);
+        Task<Medidas> Get(int MedidasId);
         Task<IEnumerable<Medidas>> GetAll();
         Task Add(Medidas medidas);
-        Task Delete(string CCorreo_electronico);
+        Task Delete(int MedidasId);
         Task Update(Medidas medidas);           
     }
 }

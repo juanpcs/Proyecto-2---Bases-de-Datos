@@ -4,6 +4,7 @@ namespace WebApi.Dtos
 {
     public class CreateMedidasDto
     {
+        public int MedidasId { get; set; }
         public string CCorreo_electronico { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Cintura { get; set; }

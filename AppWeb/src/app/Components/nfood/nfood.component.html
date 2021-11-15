@@ -1,0 +1,197 @@
+<section id = "select">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" (click) = "setAction(0)" checked>
+        <label class="form-check-label" for="inlineRadio1">Planes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option3" (click) = "setAction(1)">
+        <label class="form-check-label" for="inlineRadio1">Clientes</label>
+      </div>
+</section>
+
+
+<section  style="float: left; margin-left: 5px;" *ngIf = "plan">  
+    <section id = "plan">       
+    <h2>Agregar Plan</h2>
+    <br>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      </div>
+    <h6>Seleccione un tiempo</h6>
+  <ul>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Desayuno
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Merienda Mañana
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Almuerzo
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+       Merienda Tarde
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Cena
+      </label>
+    </div>
+  </ul>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 52%;">
+        <button  type="button" class="btn btn-primary" >Guardar</button>
+        <button  type="button" class="btn btn-primary" >Agregar</button>
+    </div>
+    </section>
+    <br>
+    <section id = "planAux" >
+        <h2>Planes</h2>
+        <div>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" style="margin-right:5px ;">
+            <label style="margin-right: 10px;">Nombre</label>
+            <a >Eliminar</a>
+        </div>
+    </section>
+
+</section>
+
+<section id = "addProduct" *ngIf = "displayProducts">
+  <h2>Agregar Producto</h2>
+  <br>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+  </div>
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Código de Barras">
+  </div>    
+  <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Descripción">
+  </div>
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Porción">
+      <span class="input-group-text">g-ml</span>
+  </div>    
+  <div class="input-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Energía">
+      <span class="input-group-text">kcal</span>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Grasa">
+    <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Sodio">
+  <span class="input-group-text">mg</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carbohidratos">
+  <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Proteína">
+  <span class="input-group-text">g</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Calcio">
+  <span class="input-group-text">mg</span>
+  <div class="input-group">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Hierro">
+    <span class="input-group-text">mg</span>
+</div>
+<div class="input-group">
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vitaminas">
+</div>
+</div>
+  <br>
+  <button class = "btn btn-primary" style="margin-left: 78%;" >Agregar</button>
+  <br>
+</section>
+
+
+<section id = "productsDisplay" *ngIf = "displayProducts" >
+    <h2>Seleccione los Productos</h2>
+    <br>
+    <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" *ngFor="let product of products">
+            
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseone" aria-controls="collapseOne">
+              {{product}}
+              {{product}}
+            </button>
+          </h2>
+          <div id="collapseone" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Descripcion: {{product}}</p>
+              <div>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" [checked] = "product" value="" aria-label="...">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section  style="float: left; margin-left: 5px;" *ngIf = "clients" >
+    <section id = "addclient">       
+        <h2>Agregar Cliente</h2>
+        <br>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" id="button-addon2">Agregar</button>
+        </div>
+    </section>
+        <br>
+    <section id = "planAux" >
+        <h2>Asignar Plan</h2>
+        <br>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Nombre del Plan" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" id="button-addon2">Asignar</button>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Hasta</span>
+          <input type="date" aria-label="Last name" class="form-control">
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" style="margin-right:5px ;">
+            <label style="margin-right: 10px;">Nombre</label>
+            <a >Eliminar</a>
+        </div>
+    </section>
+</section>
+
+<section  id = "feedback"  *ngIf = "clients" >
+    <section >       
+        <h2>Agregar Comentario</h2>
+        <br>
+    </section>
+</section>
+
+
+<section  id = "clientsInfo"  *ngIf = "clients" >
+    <section >       
+        <h2>Informacion del Cliente</h2>
+        <br>
+    </section>
+</section>
+
+
+
+
+

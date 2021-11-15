@@ -21,9 +21,9 @@ namespace WebApi.Repositories
             await _context.SaveChangesAsync();
         }
     
-        public async Task Delete(string CCorreo_electronico)
+        public async Task Delete(int MedidasId)
         {
-            var itemToRemove = await _context.MEDIDAS.FindAsync(CCorreo_electronico);
+            var itemToRemove = await _context.MEDIDAS.FindAsync(MedidasId);
             if (itemToRemove == null)
                 throw new NullReferenceException();
             
@@ -32,9 +32,9 @@ namespace WebApi.Repositories
             await _context.SaveChangesAsync();
         }
     
-        public async Task<Medidas> Get(string CCorreo_electronico)
+        public async Task<Medidas> Get(int MedidasId)
         {
-            return await _context.MEDIDAS.FindAsync(CCorreo_electronico);
+            return await _context.MEDIDAS.FindAsync(MedidasId);
         }
     
         public async Task<IEnumerable<Medidas>> GetAll()
@@ -44,7 +44,7 @@ namespace WebApi.Repositories
     
         public async Task Update(Medidas medidas)
         {
-            var itemToUpdate = await _context.MEDIDAS.FindAsync(medidas.CCorreo_electronico);
+            var itemToUpdate = await _context.MEDIDAS.FindAsync(medidas.MedidasId);
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Cintura = medidas.Cintura;

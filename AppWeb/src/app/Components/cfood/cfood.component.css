@@ -1,0 +1,68 @@
+#productsDisplay{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 700px;
+    width: 1000px;
+    margin-right: 50px;
+    float: right;
+}
+
+#recipe{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    height: 325px;
+    width: 400px;
+    float: left;
+}
+
+#register{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    height: 425px;
+    width: 400px;
+    float: left;
+}
+
+
+#select{
+    padding: 1%;
+    height: 55px;
+    background-color: gray;
+    margin-bottom: 10px;
+}
+
+#measures{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: 500px;
+    width: 600px;
+    margin-right: 675px;
+    float: right;
+}
+
+#report{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    overflow-y: auto;
+    height: fit-content;
+    width: 600px;
+    margin-right: 675px;
+    float: right;
+}
+
+#addProduct{
+    padding: 1%;
+    border-radius: 1%;
+    background-color: gray;
+    height: 700px;
+    width: 400px;
+    float: right;
+    margin-right: 20px;
+}

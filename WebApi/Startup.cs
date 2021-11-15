@@ -31,6 +31,7 @@ namespace WebApi
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<INutricionistaRepository, NutricionistaRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
+            services.AddScoped<IMedidasRepository, MedidasRepository>();
             services.AddScoped<IAdministradorRepository, AdministradorRepository>();
             services.AddScoped<IProductoRepository, ProductoRepository>();
 
@@ -74,7 +75,7 @@ namespace WebApi
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "C:/Users/chago/OneDrive/Documents/GitHub/Proyecto-2---Bases-de-Datos/WebApp";
+                spa.Options.SourcePath = "C:/Users/chago/OneDrive/Documents/GitHub/Proyecto-2---Bases-de-Datos/AppWeb";
 
                 if (env.IsDevelopment())
                 {

@@ -29,14 +29,14 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Medidas>>> GetMedidas()
         {
-            var medidass = await _medidasRepository.GetAll();
-            return Ok(medidass);
+            var medida = await _medidasRepository.GetAll();
+            return Ok(medida);
         }
     
-        [HttpGet("{CCorreo_electronico}")]
-        public async Task<ActionResult<Medidas>> GetMedidas(string CCorreo_electronico)
+        [HttpGet("{MedidasId}")]
+        public async Task<ActionResult<Medidas>> GetMedidas(int MedidasId)
         {
-            var medidas = await _medidasRepository.Get(CCorreo_electronico);
+            var medidas = await _medidasRepository.Get(MedidasId);
             if(medidas == null)
                 return NotFound();
     
@@ -47,6 +47,7 @@ namespace WebApi.Controllers
         {
             Medidas medidas = new()
             {
+                MedidasId = createMedidasDto.MedidasId,
                 CCorreo_electronico = createMedidasDto.CCorreo_electronico,
                 Fecha = createMedidasDto.Fecha,
                 Cintura = createMedidasDto.Cintura,
@@ -54,21 +55,20 @@ namespace WebApi.Controllers
                 Caderas = createMedidasDto.Caderas,
                 Musculo = createMedidasDto.Musculo,
                 Grasa = createMedidasDto.Grasa,
-               
             };
             await _medidasRepository.Add(medidas);
             return Ok();
         }
     
-        [HttpDelete("{CCorreo_electronico}")]
-        public async Task<ActionResult> DeleteMedidas(string CCorreo_electronico)
+        [HttpDelete("{MedidasId}")]
+        public async Task<ActionResult> DeleteMedidas(int MedidasId)
         {
-            await _medidasRepository.Delete(CCorreo_electronico);
+            await _medidasRepository.Delete(MedidasId);
             return Ok();
         }
     
-        [HttpPut("{CCorreo_electronico}")]
-        public async Task<ActionResult> UpdateMedidas(string CCorreo_electronico, UpdateMedidasDto updateMedidasDto)
+        [HttpPut("{MedidasId}")]
+        public async Task<ActionResult> UpdateMedidas(int MedidasId, UpdateMedidasDto updateMedidasDto)
         {
             Medidas medidas = new()
             {

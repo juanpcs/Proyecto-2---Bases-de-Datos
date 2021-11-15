@@ -1,0 +1,504 @@
+<section id = "select">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" (click) = "setAction(0)" checked>
+        <label class="form-check-label" for="inlineRadio1">Agregar Receta</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" (click) = "setAction(1)">
+        <label class="form-check-label" for="inlineRadio2">Registro de Consumo</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option3" (click) = "setAction(2)">
+        <label class="form-check-label" for="inlineRadio1">Registrar Medidas</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4" (click) = "setAction(3)">
+        <label class="form-check-label" for="inlineRadio2">Reporte de Avance</label>
+      </div>
+</section>
+
+
+<section id = "recipe" style="float: left;" *ngIf = "recipe">  
+    <h2>Agregar Receta</h2>
+    <br>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      </div>
+    <div class="input-group">
+        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"></textarea>
+    </div>
+    <br>
+    <br>
+    <button style="margin-left: 76%;" type="button" class="btn btn-primary" (click) = "addProduct()">Agregar</button>
+</section>
+
+
+<section id = "register" style="float: left;" *ngIf = "register">  
+  <h2>Registrar Cosumo</h2>
+  <br>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Fecha</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <h6>Seleccione un tiempo</h6>
+  <ul>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Desayuno
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Merienda Mañana
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Almuerzo
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+       Merienda Tarde
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Cena
+      </label>
+    </div>
+  </ul>
+  <br>
+  <br>
+  <button style="margin-left: 76%;" type="button" class="btn btn-primary" (click) = "addProduct()">Registrar</button>
+</section>
+
+<section id = "addProduct" *ngIf = "displayProducts">
+  <h2>Agregar Producto</h2>
+  <form class="form-horizontal" novalidate
+          
+        (ngSubmit)="saveProducto()" [formGroup]="productoGroup">
+    <fieldset>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Nombre.touched || prod.Nombre.dirty) && !prod.Nombre.valid }">
+        <label class="col-md-2 control-label"
+              for="NombreId">Nombre</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="NombreId"
+                type="string"
+                required
+                formControlName="Nombre" />
+          <span class="help-block" *ngIf="(prod.Nombre.touched || prod.Nombre.dirty) && prod.Nombre.errors">
+            <span *ngIf="prod.Nombre.errors && prod.Nombre.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Codigo_barras.touched || prod.Codigo_barras.dirty) && !prod.Codigo_barras.valid }">
+        <label class="col-md-2 control-label"
+              for="Codigo_barrasId">Código de barras</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="Codigo_barrasId"
+                type="number"
+                required
+                formControlName="Codigo_barras" />
+          <span class="help-block" *ngIf="(prod.Codigo_barras.touched || prod.Codigo_barras.dirty) && prod.Codigo_barras.errors">
+            <span *ngIf="prod.Codigo_barras.errors && prod.Codigo_barras.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Descripcion.touched || prod.Descripcion.dirty) && !prod.Descripcion.valid }">
+        <label class="col-md-2 control-label"
+              for="DescripcionId">Descripción</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="contraseniaId"
+                type="string"
+                required
+                formControlName="Descripcion" />
+          <span class="help-block" *ngIf="(prod.Descripcion.touched || prod.Descripcion.dirty) && prod.Descripcion.errors">
+            <span *ngIf="prod.Descripcion.errors && prod.Descripcion.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Porcion.touched || prod.Porcion.dirty) && !prod.Porcion.valid }">
+        <label class="col-md-2 control-label"
+              for="PorcionId">Músculo</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="PorcionId"
+                type="number"
+                required
+                formControlName="Porcion" />
+          <span class="help-block" *ngIf="(prod.Porcion.touched || prod.Porcion.dirty) && prod.Porcion.errors">
+            <span *ngIf="prod.Porcion.errors && prod.Porcion.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Energia.touched || prod.Energia.dirty) && !prod.Energia.valid }">
+        <label class="col-md-2 control-label"
+              for="EnergiaId">Energia</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="EnergiaId"
+                type="number"
+                required
+                formControlName="Energia" />
+          <span class="help-block" *ngIf="(prod.Energia.touched || prod.Energia.dirty) && prod.Energia.errors">
+            <span *ngIf="prod.Energia.errors && prod.Energia.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Grasa.touched || prod.Grasa.dirty) && !prod.Grasa.valid }">
+        <label class="col-md-2 control-label"
+              for="GrasaId">Grasa</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="GrasaId"
+                type="number"
+                required
+                formControlName="Grasa" />
+          <span class="help-block" *ngIf="(prod.Grasa.touched || prod.Grasa.dirty) && prod.Grasa.errors">
+            <span *ngIf="prod.Grasa.errors && prod.Grasa.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Sodio.touched || prod.Sodio.dirty) && !prod.Sodio.valid }">
+        <label class="col-md-2 control-label"
+              for="SodioId">Sodio</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="SodioId"
+                type="number"
+                required
+                formControlName="Sodio" />
+          <span class="help-block" *ngIf="(prod.Sodio.touched || prod.Sodio.dirty) && prod.Sodio.errors">
+            <span *ngIf="prod.Sodio.errors && prod.Sodio.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Carbohidratos.touched || prod.Carbohidratos.dirty) && !prod.Carbohidratos.valid }">
+        <label class="col-md-2 control-label"
+              for="CarbohidratosId">Carbohidratos</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="CarbohidratosId"
+                type="number"
+                required
+                formControlName="Carbohidratos" />
+          <span class="help-block" *ngIf="(prod.Carbohidratos.touched || prod.Carbohidratos.dirty) && prod.Carbohidratos.errors">
+            <span *ngIf="prod.Carbohidratos.errors && prod.Carbohidratos.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Proteina.touched || prod.Proteina.dirty) && !prod.Proteina.valid }">
+        <label class="col-md-2 control-label"
+              for="ProteinaId">Proteina</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="ProteinaId"
+                type="number"
+                required
+                formControlName="Proteina" />
+          <span class="help-block" *ngIf="(prod.Proteina.touched || prod.Proteina.dirty) && prod.Proteina.errors">
+            <span *ngIf="prod.Proteina.errors && prod.Proteina.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Calcio.touched || prod.Calcio.dirty) && !prod.Calcio.valid }">
+        <label class="col-md-2 control-label"
+              for="CalcioId">Calcio</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="CalcioId"
+                type="number"
+                required
+                formControlName="Calcio" />
+          <span class="help-block" *ngIf="(prod.Calcio.touched || prod.Calcio.dirty) && prod.Calcio.errors">
+            <span *ngIf="prod.Calcio.errors && prod.Calcio.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Hierro.touched || prod.Hierro.dirty) && !prod.Hierro.valid }">
+        <label class="col-md-2 control-label"
+              for="HierroId">Hierro</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="HierroId"
+                type="number"
+                required
+                formControlName="Hierro" />
+          <span class="help-block" *ngIf="(prod.Hierro.touched || prod.Hierro.dirty) && prod.Hierro.errors">
+            <span *ngIf="prod.Hierro.errors && prod.Hierro.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group"
+          [ngClass]="{'has-error': (prod.Vitaminas.touched || prod.Vitaminas.dirty) && !prod.Vitaminas.valid }">
+        <label class="col-md-2 control-label"
+              for="VitaminasId">Vitaminas</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="VitaminasId"
+                type="string"
+                required
+                formControlName="Vitaminas" />
+          <span class="help-block" *ngIf="(prod.Vitaminas.touched || prod.Vitaminas.dirty) && prod.Vitaminas.errors">
+            <span *ngIf="prod.Vitaminas.errors && prod.Vitaminas.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+          <span>
+            <button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!productoGroup.valid">
+              Guardar
+            </button>
+            <td><a (click)="onSaveProducto()" class="btn btn-danger">Cancelar</a></td>
+          </span>
+
+        </div>
+
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+<section id = "productsDisplay" *ngIf = "displayProducts" >
+    <h2>Seleccione los Productos</h2>
+    <br>
+    <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" *ngFor="let product of products">
+            
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseone" aria-controls="collapseOne">
+              {{product}}
+              {{product}}
+            </button>
+          </h2>
+          <div id="collapseone" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Descripcion: {{product}}</p>
+              <div>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" [checked] = "product" value="" aria-label="...">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="measures" *ngIf = "measures">
+  <h4>Agregar medidas</h4>
+  
+  <form class="form-horizontal" novalidate
+          
+        (ngSubmit)="saveMedidas()" [formGroup]="medidasGroup">
+    <fieldset>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Fecha.touched || med.Fecha.dirty) && !med.Fecha.valid }">
+        <label class="col-md-2 control-label"
+              for="FechaId">Fecha</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="FechaId"
+                type="date"
+                required
+                formControlName="Fecha" />
+          <span class="help-block" *ngIf="(med.Fecha.touched || med.Fecha.dirty) && med.Fecha.errors">
+            <span *ngIf="med.Fecha.errors && med.Fecha.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Cintura.touched || med.Cintura.dirty) && !med.Cintura.valid }">
+        <label class="col-md-2 control-label"
+              for="CinturaId">Cintura</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="CinturaId"
+                type="number"
+                required
+                formControlName="Cintura" />
+          <span class="help-block" *ngIf="(med.Cintura.touched || med.Cintura.dirty) && med.Cintura.errors">
+            <span *ngIf="med.Cintura.errors && med.Cintura.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Cuello.touched || med.Cuello.dirty) && !med.Cuello.valid }">
+        <label class="col-md-2 control-label"
+              for="CuelloId">Cuello</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="CuelloId"
+                type="number"
+                required
+                formControlName="Cuello" />
+          <span class="help-block" *ngIf="(med.Cuello.touched || med.Cuello.dirty) && med.Cuello.errors">
+            <span *ngIf="med.Cuello.errors && med.Cuello.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Caderas.touched || med.Caderas.dirty) && !med.Caderas.valid }">
+        <label class="col-md-2 control-label"
+              for="CaderasId">Caderas</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="contraseniaId"
+                type="number"
+                required
+                formControlName="Caderas" />
+          <span class="help-block" *ngIf="(med.Caderas.touched || med.Caderas.dirty) && med.Caderas.errors">
+            <span *ngIf="med.Caderas.errors && med.Caderas.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Musculo.touched || med.Musculo.dirty) && !med.Musculo.valid }">
+        <label class="col-md-2 control-label"
+              for="MusculoId">Músculo</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="MusculoId"
+                type="number"
+                required
+                formControlName="Musculo" />
+          <span class="help-block" *ngIf="(med.Musculo.touched || med.Musculo.dirty) && med.Musculo.errors">
+            <span *ngIf="med.Musculo.errors && med.Musculo.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group"
+          [ngClass]="{'has-error': (med.Grasa.touched || med.Grasa.dirty) && !med.Grasa.valid }">
+        <label class="col-md-2 control-label"
+              for="GrasaId">Grasa</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                id="GrasaId"
+                type="number"
+                required
+                formControlName="Grasa" />
+          <span class="help-block" *ngIf="(med.Grasa.touched || med.Grasa.dirty) && med.Grasa.errors">
+            <span *ngIf="med.Grasa.errors && med.Grasa.errors.required">
+              El campo es obligatorio
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+          <span>
+            <button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!medidasGroup.valid">
+              Guardar
+            </button>
+            <td><a (click)="onSaveMedidas()" class="btn btn-danger">Cancelar</a></td>
+          </span>
+
+        </div>
+
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+<section id="report" *ngIf = "report">
+  <h4>Generar Reporte</h4>
+  <br>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Desde</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Hasta</span>
+    <input type="date" aria-label="Last name" class="form-control">
+  </div>
+  <br>
+  <button class = "btn btn-primary" style="margin-left: 85%;" >Generar</button>
+  <br>
+</section>
