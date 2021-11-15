@@ -3,8 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_menu_agregar_producto.xml" value="0.25" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_menu_agregar_receta.xml" value="0.25" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_menu_gestion_recetas.xml" value="0.22" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_menu_opciones.xml" value="0.25" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_menu_principal.xml" value="0.25" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/activity_registro_consumo.xml" value="0.25" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/list_item_personalized.xml" value="0.1" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/spinner_item.xml" value="0.1" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/layout/spinner_item2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Juan P Carrillo/AndroidStudioProjects/AppNutriTec/app/src/main/res/xml/network_security_config.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuGestionRecetas">
+
+  <TextView
+      android:id="@+id/textView6"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Ingrese el nombre de la receta:"
+      android:textAlignment="center"
+      android:textColor="#000000"
+      android:textSize="18sp" />
+
+  <EditText
+      android:id="@+id/etNombreReceta"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="2dp"
+      android:layout_marginRight="25dp"
+      android:ems="10"
+      android:hint="Nombre receta"
+      android:inputType="textPersonName"
+      android:textAlignment="center" />
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Seleccione un producto para su receta:"
+      android:textAlignment="center"
+      android:textColor="#000000"
+      android:textSize="18sp" />
+
+  <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="match_parent"
+      android:layout_height="52dp"
+      android:layout_marginTop="5dp"
+      android:gravity="center"
+      android:spinnerMode="dialog" />
+
+  <TextView
+      android:id="@+id/textView9"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Indique la cantidad de producto:"
+      android:textAlignment="center"
+      android:textColor="#000000"
+      android:textSize="18sp" />
+
+  <EditText
+      android:id="@+id/etCantidadProducto"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="2dp"
+      android:layout_marginRight="25dp"
+      android:ems="10"
+      android:hint="Cantidad (gr o ml)"
+      android:inputType="textPersonName"
+      android:textAlignment="center" />
+
+  <Button
+      android:id="@+id/btnAgregarProducto2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="70dp"
+      android:layout_marginRight="70dp"
+      android:onClick="AddProduct"
+      android:text="Añadir Producto"
+      android:textColor="#000000" />
+
+  <TextView
+      android:id="@+id/textView8"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Productos añadidos a la receta:"
+      android:textAlignment="center"
+      android:textColor="#000000"
+      android:textSize="18sp" />
+
+  <TextView
+      android:id="@+id/tvProductosReceta"
+      android:layout_width="match_parent"
+      android:layout_height="310dp"
+      android:layout_marginLeft="2dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="2dp"
+      android:background="@drawable/border"
+      android:scrollbars="vertical"
+      android:text=" Producto    |    Porción    |    Calorías    |    Cantidad"
+      android:textSize="18sp" />
+
+</LinearLayout>

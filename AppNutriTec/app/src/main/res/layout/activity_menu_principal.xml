@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MenuPrincipal">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Seleccione el tiempo de comida:"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnDesayuno"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Desayuno"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/btnMeriendaM"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Merienda mañana"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/btnAlmuerzo"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Almuerzo"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/btnMeriendaT"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Merienda tarde"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/btnCena"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Cena"
+        android:textColor="#000000" />
+
+</LinearLayout>

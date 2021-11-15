@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistroConsumo">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Indique la fecha:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="23sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etFecha"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="Fecha"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnGetRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Listo"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Consumo actual registrado:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tvConsumoActual"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/border"
+        android:clickable="false"
+        android:hint="No hay registro aún"
+        android:inputType="textMultiLine"
+        android:isScrollContainer="true"
+        android:text="Principalmente se hace evidente la soledad en el coronel Aureliano Buendía, ya que su inhabilidad para expresar el amor hace que se marche a la guerra dejando hijos por diversos lugares de madres diferentes; en alguna ocasión solicitó trazar un círculo de tres metros a su alrededor para evitar que se le acercaran y después de firmar la paz, se dispara en el pecho para no tener que afrontar su futuro, con tan mala fortuna que no logra su propósito y pasa su vejez en el laboratorio de alquimia elaborando pescaditos de oro que deshace y rehace en un pacto honrado con la soledad. Otros personajes como el fundador de Macondo, José Arcadio Buendía (quien muere solo, atado a un árbol), Úrsula (quien vive la soledad en la ceguera de su vejez), José Arcadio (hijo del fundador) y Rebeca (quienes se marchan a habitar solos en otra casa por haber &quot;deshonrado&quot; a la familia), Amaranta (quien permanece y muere soltera y virgen), Gerineldo Márquez (quien espera una pensión que nunca llega y el amor de Amaranta), Pietro Crespi (quien se suicida ante el rechazo de Amaranta), José Arcadio Segundo (quien desde que vio un fusilamiento nunca tuvo relación con nadie y pasó sus últimos años encerrado en el cuarto de Melquíades), Fernanda del Carpio (quien fue criada para ser reina y la primera vez que sale de su casa es a los 12 años de edad), Remedios 'Meme' Buendía (la cual fue enviada a un convento, en contra de su voluntad, pero completamente resignada luego de la desgracia que sufrió Mauricio Babilonia y se condena al eterno silencio), y Aureliano Babilonia (quien pasa encerrado en el cuarto de Melquíades; e incluso hubo un momento en que habitó completamente solo en la casa de los Buendía, después del asesinato del último José Arcadio y antes de la llegada de Amaranta Úrsula) entre otros, sufren las consecuencias de su soledad y abandono."
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="AñadirProducto"
+            android:text="Añadir  producto"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="AñadirReceta"
+            android:text="Añadir receta"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>
