@@ -44,22 +44,9 @@ public class LoginActivity extends AppCompatActivity {
 
         etContraseñaLogin = (EditText)findViewById(R.id.etContraseñaLogin);
 
-        Toast.makeText(this, "Bienvenido: ", Toast.LENGTH_SHORT ).show();
 
         queue = Volley.newRequestQueue(this);
-        //JsonArrayRequestClientes();
-/*
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent menuOptions = new Intent(LoginActivity.this, MenuOpciones.class);
-                menuOptions.putExtra("correo_cliente","hola mundo");
-                LoginActivity.this.startActivity(menuOptions);
 
-            }
-        });
-
- */
     }
 
     //metodo que se encarga de pasar el correo del cliente logueado  al siguiente activity
@@ -123,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         queue.add(request);
-        //Toast.makeText(LoginActivity.this,"Correo no encontrado",Toast.LENGTH_SHORT).show();
+
 
     }
 

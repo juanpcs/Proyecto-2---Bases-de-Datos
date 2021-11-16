@@ -98,7 +98,6 @@
       android:layout_marginRight="2dp"
       android:background="@drawable/border"
       android:scrollbars="vertical"
-      android:text=" Producto    |    Porción    |    Calorías    |    Cantidad"
       android:textSize="18sp" />
 
 </LinearLayout>

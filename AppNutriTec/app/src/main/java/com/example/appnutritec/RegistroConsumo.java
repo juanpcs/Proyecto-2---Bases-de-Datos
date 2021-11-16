@@ -31,7 +31,6 @@ public class RegistroConsumo extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         String correo_usuario = getIntent().getStringExtra("correo_usuario");
-        Toast.makeText(this, "Correo del usuario: " + correo_usuario, Toast.LENGTH_SHORT ).show();
 
 
     }
