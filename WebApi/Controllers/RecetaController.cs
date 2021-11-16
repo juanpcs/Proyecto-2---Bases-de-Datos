@@ -64,6 +64,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        // POST utilizando un procedimiento almacenado
         [HttpPost("sp")]
         public async Task Post([FromBody] Receta receta)
         {
