@@ -4,7 +4,7 @@ namespace WebApi.Dtos
 {
     public class UpdateRecetaDto
     {
-        public decimal Descripcion { get; set; }
+        public string Descripcion { get; set; }
         public int Porcion { get; set; }
         public int Energia { get; set; }
         public int Grasa { get; set; }

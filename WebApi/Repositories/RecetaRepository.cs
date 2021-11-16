@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
 using WebApi.Models;
+using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 
 
@@ -12,9 +14,11 @@ namespace WebApi.Repositories
     public class RecetaRepository : IRecetaRepository
     {
         private readonly IDataContext _context;
-        public RecetaRepository(IDataContext context)
+        private readonly string _connectionString;
+        public RecetaRepository(IDataContext context, IConfiguration configuration)
         {
         _context = context;
+        _connectionString = configuration.GetConnectionString("DefaultConnection");
     
         }
         public async Task Add(Receta receta)
@@ -23,8 +27,6 @@ namespace WebApi.Repositories
             await _context.SaveChangesAsync();
         }
 
-        
-    
         public async Task Delete(string Nombre)
         {
             var itemToRemove = await _context.RECETA.FindAsync(Nombre);
@@ -35,10 +37,27 @@ namespace WebApi.Repositories
             _context.RECETA.Remove(itemToRemove);
             await _context.SaveChangesAsync();
         }
-    
+
         public async Task<Receta> Get(string Nombre)
         {
             return await _context.RECETA.FindAsync(Nombre);
+        }
+
+        public async Task spAddReceta(string Nombre, string Descripcion, string CCorreo_electronico)
+        {
+            using (SqlConnection sql = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetProductosByEstado", sql))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@Name", Nombre));
+                    cmd.Parameters.Add(new SqlParameter("@Descripcion", Descripcion));
+                    cmd.Parameters.Add(new SqlParameter("@CCorreo_electronico", CCorreo_electronico));
+                    await sql.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                    return;
+                }
+            }
         }
     
     
