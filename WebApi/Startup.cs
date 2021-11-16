@@ -34,10 +34,9 @@ namespace WebApi
             services.AddScoped<IMedidasRepository, MedidasRepository>();
             services.AddScoped<IAdministradorRepository, AdministradorRepository>();
             services.AddScoped<IProductoRepository, ProductoRepository>();
+            services.AddScoped<IProductoRepository, ProductoRepository>();
 
             services.AddControllers();
-
-
 
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+// Modelo que representa la información de la tabla RECETA
 
 namespace WebApi.Models
 {

@@ -15,6 +15,7 @@ namespace WebApi.Data
         DbSet<Medidas> MEDIDAS { get; init; }
         DbSet<Administrador> ADMINISTRADOR { get; init; }
         DbSet<Producto> PRODUCTO { get; init; }
+        DbSet<Receta> RECETA { get; init; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

@@ -18,5 +18,6 @@ namespace WebApi.Data
         public DbSet<Medidas> MEDIDAS { get; init; }
         public DbSet<Administrador> ADMINISTRADOR { get; init; }
         public DbSet<Producto> PRODUCTO { get; init; }
+        public DbSet<Receta> RECETA { get; init; }
     }
 }
