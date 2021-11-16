@@ -43,16 +43,16 @@ namespace WebApi.Repositories
             return await _context.RECETA.FindAsync(Nombre);
         }
 
-        public async Task spAddReceta(string Nombre, string Descripcion, string CCorreo_electronico)
+        public async Task spAddReceta(Receta receta)
         {
             using (SqlConnection sql = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spGetProductosByEstado", sql))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@Name", Nombre));
-                    cmd.Parameters.Add(new SqlParameter("@Descripcion", Descripcion));
-                    cmd.Parameters.Add(new SqlParameter("@CCorreo_electronico", CCorreo_electronico));
+                    cmd.Parameters.Add(new SqlParameter("@Name", receta.Nombre));
+                    cmd.Parameters.Add(new SqlParameter("@Descripcion", receta.Descripcion));
+                    cmd.Parameters.Add(new SqlParameter("@CCorreo_electronico", receta.CCorreo_electronico));
                     await sql.OpenAsync();
                     await cmd.ExecuteNonQueryAsync();
                     return;

@@ -63,6 +63,12 @@ namespace WebApi.Controllers
             await _recetaRepository.Add(receta);
             return Ok();
         }
+
+        [HttpPost("sp")]
+        public async Task Post([FromBody] Receta receta)
+        {
+            await _recetaRepository.spAddReceta(receta);
+        }
     
         [HttpDelete("{Nombre}")]
         public async Task<ActionResult> DeleteReceta(string Nombre)

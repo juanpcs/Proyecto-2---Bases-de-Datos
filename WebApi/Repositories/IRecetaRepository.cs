@@ -12,6 +12,6 @@ namespace WebApi
         Task Add(Receta receta);
         Task Delete(string Nombre);
         Task Update(Receta receta);      
-        Task spAddReceta (string Nombre, string Descripcion, string CCorreo_electronico);     
+        Task spAddReceta (Receta receta);     
     }
 }
